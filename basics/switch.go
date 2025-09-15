@@ -1,4 +1,4 @@
-package main
+package basics
 
 import "fmt"
 
@@ -83,15 +83,17 @@ func main() {
 			checkType(true)
 }
 
-func checkType(x interface{}){
-	switch x.(type){
+func checkType(x interface{}) {
+	switch x.(type) {
 	case int:
-		fmt.Println("integer")
+		fmt.Println("It's an integer")
+	case int32:
+		fmt.Println("It's an integer")
 	case float64:
-		fmt.Println("float64")
+		fmt.Println("It's float")
 	case string:
-		fmt.Println("string")
+		fmt.Println("It's a string")
 	default:
-		fmt.Println("unknown type")
+		fmt.Println("Unknown Type")
 	}
 }
