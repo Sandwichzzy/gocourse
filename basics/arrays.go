@@ -2,6 +2,8 @@ package basics
 
 import "fmt"
 
+//数组（array）是固定长度的，一旦声明后其长度就不能改变，因此数组本身不支持直接的增删操作。
+// 如果需要动态地添加或删除元素，应该使用切片（slice） 来实现。
 
 func main() {
 	// var arrayName [size]elementType
