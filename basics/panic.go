@@ -1,4 +1,4 @@
-package main
+package basics
 
 import "fmt"
 
@@ -22,7 +22,7 @@ func process(input int){
 		fmt.Println("Before Panic")
 		panic("input must be a non-negative number")
 		// fmt.Println("After Panic")
-		// defer fmt.Println("Deferred 3") unreachable
+		// defer fmt.Println("Deferred 3") //unreachable
 	}
 	fmt.Println("Processing input:", input)
 }
