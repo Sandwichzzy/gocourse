@@ -1,11 +1,22 @@
-package main
+package basics
 
 import (
 	"fmt"
 	"unicode/utf8"
 )
 
-
+// --Runes and characters
+// -Similarities
+// Representing Characters
+// Storage Size
+// -Differences
+// Unicode Support
+// Type and Size
+// Encoding and Handling
+// --Practical Considerations
+// Internationalization
+// Portability
+// Efficiency
 func main() {
 	message:="Hello,\nGo!"
 	message2:="Hello,\tGo!"
