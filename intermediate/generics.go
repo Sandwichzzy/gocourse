@@ -6,7 +6,7 @@
 // Type Constraints
 // Documentation
 // Testing
-package main
+package intermediate
 
 import "fmt"
 
