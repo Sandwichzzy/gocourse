@@ -1,4 +1,4 @@
-package intermediate
+package exercise
 
 import (
 	"encoding/hex"
