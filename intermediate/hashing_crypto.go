@@ -1,4 +1,4 @@
-package main
+package intermediate
 
 import (
 	"crypto/rand"
@@ -49,7 +49,7 @@ func main() {
 	fmt.Println("hash::",signUphash) //r4LxJ26iSBbVfj7uNHbKPixCk62BSEe6kri3tiDkp6k=  simulate as storing in database
 	hashOriginalPassword := sha256.Sum256([]byte(password))
 	fmt.Println("Hash of just the password string without salt:", base64.StdEncoding.EncodeToString(hashOriginalPassword[:]))
-	
+
 	// verify password
 	// retrieve the saltStr and decode it
 	decodedSalt,err:=base64.StdEncoding.DecodeString(saltStr)
