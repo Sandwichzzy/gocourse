@@ -1,4 +1,4 @@
-package main
+package intermediate
 
 //embed 指令是一个在 Go 1.16 版本中引入的特性，它允许将外部文件和目录直接嵌入到 Go 程序中，编译到最终的可执行文件中。
 // import "embed"

@@ -9,6 +9,8 @@ import (
 // -Text Transmission
 // -Storage
 // -URLs and Data URLs
+// Base64编码的主要作用是将二进制数据转换为文本格式，
+// 这样可以方便地通过文本协议（如电子邮件和HTTP头）进行传输。这使得在不同的系统和应用程序之间处理数据变得更加简单和安全。
 // 2.Why is Encoding lmportant?
 // -Data Storage
 // -Data Transmission
