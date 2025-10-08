@@ -1,9 +1,15 @@
-package main
+package intermediate
 
 import (
 	"fmt"
 	"os"
 )
+
+// Why Use Temporary Files and Directories?
+// Temporary Storage
+// lsolation
+// Automatic Cleanup
+// Default Values and Usage
 
 func checkError(err error){
 	if err!=nil {
