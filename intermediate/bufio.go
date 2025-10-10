@@ -20,7 +20,7 @@ func main() {
 
 	//  reader:=bufio.NewReader(strings.NewReader("Hello,bufio packageeeeeee!\n How are you doing?"))
 
-	 //reading byte slice
+	// //  reading byte slice
 	//  data:=make([]byte,20)
 	//  n,err:=reader.Read(data)
 	//  if err!=nil{
