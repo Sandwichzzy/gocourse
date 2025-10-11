@@ -1,4 +1,4 @@
-package main
+package advanced
 
 import (
 	"fmt"
@@ -26,7 +26,7 @@ func main() {
 		err=doWork()
 	}()
 	// err = go doWork() // This is not accepted
-	
+
 	time.Sleep(2*time.Second)
 
 	if err != nil {
