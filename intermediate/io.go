@@ -1,4 +1,4 @@
-package main
+package intermediate
 
 import (
 	"bytes"
@@ -135,7 +135,8 @@ func main() {
 	filepath := "io.txt"
 	writeToFile(filepath,"Hello File!")
 
-
+	resource := &MyResource{name: "TestResource"}
+	closeResource(resource)
 	
 }
 
