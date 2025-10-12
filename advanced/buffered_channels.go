@@ -1,4 +1,4 @@
-package main
+package advanced
 
 import (
 	"fmt"
@@ -11,7 +11,7 @@ import (
 // Flow Control
 // -Creating Buffered Channels
 // make(chan Type, capacity)
-// Buffer capacity
+// Buffer capacity 大的缓冲区减少阻塞的可能性 但增加内存使用量
 // -Key Concepts of Channel Buffering
 // Blocking Behavior
 // Non-Blocking Operations
