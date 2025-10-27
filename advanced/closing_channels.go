@@ -1,4 +1,4 @@
-package main
+package advanced
 
 import "fmt"
 
@@ -36,6 +36,12 @@ func filter(in <-chan int, out chan<- int){
 func main(){
 	ch1:=make(chan int)
 	ch2:=make(chan int)
+
+
+
+
+
+	
 	go producer(ch1)	
 	go filter(ch1,ch2)
 	for val :=range ch2{
