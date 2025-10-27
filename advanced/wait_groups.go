@@ -1,4 +1,4 @@
-package main
+package advanced
 
 import (
 	"fmt"
@@ -6,37 +6,68 @@ import (
 	"time"
 )
 
-// CONSTRUCTION EXAMPLE
-type Worker struct {
-	ID int
-	Task string
+//ticketExample
+type ticketRequest struct {
+	personID int
+	numTickets int
+	cost int
 }
 
-// PerformTask simulates a worker performing a task
-func (w *Worker) PerformTask(wg *sync.WaitGroup){
+//simulate processing of ticket requests
+func (t *ticketRequest) ticketProcessor( wg *sync.WaitGroup){
 	defer wg.Done()
-	fmt.Printf("Worker %d starting task: %s\n", w.ID, w.Task)
-	time.Sleep(time.Duration(w.ID)* time.Second) // Simulate time taken to perform the task
-	fmt.Printf("Worker %d completed task: %s\n", w.ID, w.Task)
+	fmt.Printf("Processing %d ticket(s) of personId %d with total cost %d\n", t.numTickets, t.personID, t.cost)
+	//simulate processing time
+	time.Sleep(time.Second)
+	fmt.Printf("Processed request for personId: %d\n", t.personID)
 }
+
 
 func main() {
 	var wg sync.WaitGroup
-		// Define tasks to be performed by workers
-	tasks := [] string{"digging","laying brick","painting"}
-
-	// Create and start workers
-	for i,task := range tasks {
-		worker := Worker{ID:i+1,Task:task}
+	numRequests :=5
+	price:=5
+	for i:=0; i< numRequests; i++ {
 		wg.Add(1)
-		go worker.PerformTask(&wg)
+		request := ticketRequest{personID: i+1, numTickets:(i+1)*2, cost: (i+1)*price}
+		go request.ticketProcessor(&wg)
 	}
-	
-	// Wait for all workers to finish
+
 	wg.Wait()
-		// Construction is finished
-	fmt.Println("All workers completed.")
+	fmt.Println("All ticket requests processed.")
 }
+
+// CONSTRUCTION EXAMPLE
+// type Worker struct {
+// 	ID int
+// 	Task string
+// }
+
+// // PerformTask simulates a worker performing a task
+// func (w *Worker) PerformTask(wg *sync.WaitGroup){
+// 	defer wg.Done()
+// 	fmt.Printf("Worker %d starting task: %s\n", w.ID, w.Task)
+// 	time.Sleep(time.Duration(w.ID)* time.Second) // Simulate time taken to perform the task
+// 	fmt.Printf("Worker %d completed task: %s\n", w.ID, w.Task)
+// }
+
+// func main() {
+// 	var wg sync.WaitGroup
+// 		// Define tasks to be performed by workers
+// 	tasks := [] string{"digging","laying brick","painting"}
+
+// 	// Create and start workers
+// 	for i,task := range tasks {
+// 		worker := Worker{ID:i+1,Task:task}
+// 		wg.Add(1)
+// 		go worker.PerformTask(&wg)
+// 	}
+	
+// 	// Wait for all workers to finish
+// 	wg.Wait()
+// 		// Construction is finished
+// 	fmt.Println("All workers completed.")
+// }
 
 
 // EXAMPLE WITH CHANNELS
